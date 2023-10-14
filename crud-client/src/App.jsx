@@ -18,6 +18,7 @@ const App = () => {
         body: JSON.stringify(user),
       });
       const data = await res.json();
+      console.log(data);
     };
     postData();
   };

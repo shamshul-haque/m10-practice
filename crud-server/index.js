@@ -30,10 +30,18 @@ async function run() {
     const database = client.db("usersDB");
     const userCollection = database.collection("users");
 
-    // read operation
+    // get operation
     app.get("/users", async (req, res) => {
       const cursor = userCollection.find();
       const result = await cursor.toArray();
+      res.send(result);
+    });
+
+    // get operation for specific id
+    app.get("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await userCollection.findOne(query);
       res.send(result);
     });
 
@@ -49,7 +57,7 @@ async function run() {
     app.delete("/users/:id", async (req, res) => {
       const id = req.params.id;
       console.log("please delete:", id);
-      const query = { _id: ObjectId };
+      const query = { _id: new ObjectId(id) };
       const result = await userCollection.deleteOne(query);
       res.send(result);
     });

@@ -29,7 +29,7 @@ const App = () => {
       <form onSubmit={handleAddUser}>
         <input type="text" name="name" /> <br />
         <input type="email" name="email" /> <br />
-        <input type="submit" value="Add User" />
+        <input type="submit" value="Add" />
       </form>
     </>
   );

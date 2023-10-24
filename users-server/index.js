@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const users = [
-  { id: 1, name: "Sabnor", email: "sabnor@gmail.com" },
+  { id: 1, name: "Sabnur", email: "sabnor@gmail.com" },
   { id: 2, name: "Purnima", email: "purnima@gmail.com" },
   { id: 3, name: "Mousumi", email: "mousumi@gmail.com" },
 ];
